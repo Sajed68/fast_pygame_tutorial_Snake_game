@@ -227,6 +227,7 @@ def __crash_check__(self):
             self.crash = True
             # print ('Crash')
 ```
+
 <p dir='rtl' align='right'>
 توابع برای حرکت در جهات مختلف، که به صورت 
 move_left, up, right, down
@@ -253,6 +254,7 @@ def __move_up__(self):
        
         self.__draw__()
 ```
+
 <p dir='rtl' align='right'>
 در صورت برخورد سر مار با محل طعمه باید امتیاز یکی اضافه شود:
 </p>
@@ -294,6 +296,7 @@ def update(self, direction):
 ```
 
 ------
+
 <p dir='rtl' align='right'>
 در نهایت کلاس مار به صورت زیر نوشته می‌شود:
 </p>
@@ -484,6 +487,7 @@ class snake(object):
             self.__get_bounce_check__()
             self.__crash_check__()
 ```
+
 <p dir='rtl' align='right'>
 تابع حلقه اصلی برنامه، تابعی است که در هر دور حلقه اصلی خود منتظر دریافت کلیدی از کاربر می‌شود که مشخص کننده جهت حرکت مار می‌باشد.
 برای دریافت کلید نیاز به فعال سازی 
@@ -531,6 +535,7 @@ def main_game():
         if Snake.crash:
             return 0
 ```
+
 <p dir='rtl' align='right'>
 همچنین برای برنامه نیاز داریم که یک منوی اولیه طراحی کنیم. در این قسمت پیش از شروع بازی و اجرای تابع 
 main_game 
@@ -594,7 +599,7 @@ x
 
 #### توابع رسم در pygame
 
-> ```python
+```python
 Rect = pygame.draw.rect(Surface, tuple(color), tuple(Rect), width=0)
 pygame.draw.polygon(Surface, tuple(color), list(pointlists), width=0)
 pygame.draw.circle(Surface, tuple(color), tuple(centerpointx,y), radius, width=0) 
@@ -603,7 +608,8 @@ pygame.draw.arc(Surface, tuple(color), tuple(Rect), width)
 pygame.draw.line(Surface, color, start_pos, stop_pos, width>1)
 pygame.draw.lines(Surface, tuple(color), bool(closed), list(points), width)
 python.draw.aaline(Surface, tuple(color), start, stop, end, blend=1)
-python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)```  
+python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)
+```  
 
 <p dir='rtl' align='right'>
 که اگر پهنا صفر باشد شکل‌ها به صورت توپر رسم می‌شوند.
@@ -611,10 +617,11 @@ python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)`
 
 #### رسم شکل در پیش‌زمینه:
 
-> ```pyton
+```pyton
 bg = pygame.image.load(folder, "....")
 bg = bg.convert()
-screen.blit(bg, (x,y))```
+screen.blit(bg, (x,y))
+```
 
 #### پخش صدا
 
@@ -622,16 +629,18 @@ screen.blit(bg, (x,y))```
 ابتدا باید پخش کننده صوتی پیش تنظیم شود: این کار با دستور زیر انجام می‌شود:
 </p>
 
-> ```python
-pygame.mixer.pre.load(44100, -16, 2, 2048)```
+```python
+pygame.mixer.pre.load(44100, -16, 2, 2048)
+```
 
 <p dir='rtl' align='right'>
 سپس پرونده صوتی را بارگزاری می‌کنیم:
 </p>
 
-> ```python
+```python
 m = pygame.music.load("soundfile.wav")
-m.play(-1) # non-stop and repeated```
+m.play(-1) # non-stop and repeated
+```
 
 #### نمایش متن
 
@@ -641,22 +650,25 @@ m.play(-1) # non-stop and repeated```
 * تعیین قلم:
 </p> 
 
->```python
-pfont = pygame.SysFont("Name", int(size))```
+```python
+pfont = pygame.SysFont("Name", int(size))
+```
 
 <p dir='rtl' align='right'>
 * تولید متن:
 </p>
 
->```python
+```python
 text = pfont.render("text", True, tuple(color))
-text = text.convert_alpha() # optional```  
+text = text.convert_alpha() # optional
+```  
 
 <p dir='rtl' align='right'>
 * نمایش متن روی صفحه:
 </p>
 
->```python
-screen.blit(text, (x,y))```
+```python
+screen.blit(text, (x,y))
+```
 
 [مرجع](pygame.org/docs/ref/draw.html#pygame.draw.rect)
