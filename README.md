@@ -573,7 +573,11 @@ if __name__ == '__main__':
 
 <p dir='rtl' align='right'>
 سایر نکات:
+</p>
+
 #### رسم شکل هندسی روی Surface:
+
+<p dir='rtl' align='right'>
 در این برنامه دو 
 Surface 
 با نام‌های 
@@ -590,7 +594,7 @@ x
 
 #### توابع رسم در pygame
 
-> ```python
+>```python
 Rect = pygame.draw.rect(Surface, tuple(color), tuple(Rect), width=0)
 pygame.draw.polygon(Surface, tuple(color), list(pointlists), width=0)
 pygame.draw.circle(Surface, tuple(color), tuple(centerpointx,y), radius, width=0) 
@@ -600,7 +604,7 @@ pygame.draw.line(Surface, color, start_pos, stop_pos, width>1)
 pygame.draw.lines(Surface, tuple(color), bool(closed), list(points), width)
 python.draw.aaline(Surface, tuple(color), start, stop, end, blend=1)
 python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)
-```
+```  
 
 <p dir='rtl' align='right'>
 که اگر پهنا صفر باشد شکل‌ها به صورت توپر رسم می‌شوند.
