@@ -544,7 +544,7 @@ if __name__ == '__main__':
     pygame.quit()
 ```
 
-![snake](./animated.gif)
+![snake](./img/animated.gif)
 
 ----------
 سایر نکات:
