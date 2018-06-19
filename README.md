@@ -1,4 +1,3 @@
-
 برای شروع کار: ابتدا ماژول را به برنامه اضافه می‌کنیم:  
  > import pygame
  
@@ -562,38 +561,25 @@ x
 * ایجاد یا انتخاب یک Surface
 * استفاده از یک تابع رسم با ورودی Surface
 * نمایش Surface بر روی screen با استفاده از متد screen.blit(Surface, (x,y))
+
 #### توابع رسم در pygame
+
 > ```python
 Rect = pygame.draw.rect(Surface, tuple(color), tuple(Rect), width=0)
-```
-> ```python
 pygame.draw.polygon(Surface, tuple(color), list(pointlists), width=0)
-```
->```python
 pygame.draw.circle(Surface, tuple(color), tuple(centerpointx,y), radius, width=0) 
-```
->```python
 Rect = pygame.draw.ellipse(Surface, tuple(color_rgb), tuple(Rect_xywh), width)
-```
->```python
 pygame.draw.arc(Surface, tuple(color), tuple(Rect), width)
-```
->```python
 pygame.draw.line(Surface, color, start_pos, stop_pos, width>1)
-```
->```python
 pygame.draw.lines(Surface, tuple(color), bool(closed), list(points), width)
-```
->```python
 python.draw.aaline(Surface, tuple(color), start, stop, end, blend=1)
-```
->```python
 python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)
 ```
 
 که اگر پهنا صفر باشد شکل‌ها به صورت توپر رسم می‌شوند.
 
 #### رسم شکل در پیش‌زمینه:
+
 >```pyton
 bg = pygame.image.load(folder, "....")
 bg = bg.convert()
@@ -608,6 +594,7 @@ pygame.mixer.pre.load(44100, -16, 2, 2048)
 ```
 
 سپس پرونده صوتی را بارگزاری می‌کنیم:
+
 >```python
 m = pygame.music.load("soundfile.wav")
 m.play(-1) # non-stop and repeated
@@ -615,17 +602,23 @@ m.play(-1) # non-stop and repeated
 
 #### نمایش متن
 برای نمایش متن مراحل زیر طی می‌شود:
+
 * تعیین قلم:
+
 >```python
 pfont = pygame.SysFont("Name", int(size))
 ```
+
 * تولید متن:
-> ```python
+
+>```python
 text = pfont.render("text", True, tuple(color))
 text = text.convert_alpha() # optional
 ```
+
 * نمایش متن روی صفحه:
-> ```python
+
+>```python
 screen.blit(text, (x,y))
 ```
 
