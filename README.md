@@ -144,13 +144,12 @@ for i in range(64):
 self.point_coor = None  # initiate location of food is UnKnown!
 self.__create_point__() # A function to set location of food point
 ```
+
 <p dir='rtl' align='right'>
 بنابراین کلاس تعریف شده نیاز به دو تابع یکی برای نمایش و دیگری برای مشخص کردن مکان طعمه خواهیم داشت:
-
 در این تابع هر نقطه موجود در ویژگی 
 self.points 
 به صورت یک مربع ۱۰ در ۱۰ سفید رنگ بر روی صفحه ظاهر می‌شود.
-
  تابع grow_up(): این تابع نقاط را برای یک حرکت تغییر می‌دهد.
 </p>
  
@@ -190,6 +189,7 @@ def __grow_up__(self):
             self.points.append((x, y))
                         
 ```
+
 <p dir='rtl' align='right'>
 برای تعیین مکان و نمایش طعمه از متد زیر استفاده می‌شود:
 مشخص است که مکان نقطه نباید توسط مار پر شده باشد:
@@ -208,6 +208,7 @@ def __create_point__(self):
         self.point_coor = (x * 10, y * 10, 10, 10)
         pygame.draw.rect(SNAKE_PLANE, (0, 0, 0), self.point_coor)
 ```
+
 <p dir='rtl' align='right'>
 همچنین در صورت برخورد سر مار با حاشیه‌های 
 screen 
@@ -495,7 +496,6 @@ Event Handler
 داریم.برای فعال سازی این مورد از توابع 
  <b>pygame.event.get()</b>
 استفاده می‌کنیم.
-  
 در نهایت برای نمایش همه تغییرات و صفحه‌ها نیاز است که بر روی  
 screen 
 تغییرات با استفاده از متد 
