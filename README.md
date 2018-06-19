@@ -594,7 +594,7 @@ x
 
 #### توابع رسم در pygame
 
->```python
+> ```python
 Rect = pygame.draw.rect(Surface, tuple(color), tuple(Rect), width=0)
 pygame.draw.polygon(Surface, tuple(color), list(pointlists), width=0)
 pygame.draw.circle(Surface, tuple(color), tuple(centerpointx,y), radius, width=0) 
@@ -603,8 +603,7 @@ pygame.draw.arc(Surface, tuple(color), tuple(Rect), width)
 pygame.draw.line(Surface, color, start_pos, stop_pos, width>1)
 pygame.draw.lines(Surface, tuple(color), bool(closed), list(points), width)
 python.draw.aaline(Surface, tuple(color), start, stop, end, blend=1)
-python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)
-```  
+python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)```  
 
 <p dir='rtl' align='right'>
 که اگر پهنا صفر باشد شکل‌ها به صورت توپر رسم می‌شوند.
@@ -612,11 +611,10 @@ python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)
 
 #### رسم شکل در پیش‌زمینه:
 
->```pyton
+> ```pyton
 bg = pygame.image.load(folder, "....")
 bg = bg.convert()
-screen.blit(bg, (x,y))
-```
+screen.blit(bg, (x,y))```
 
 #### پخش صدا
 
@@ -624,18 +622,16 @@ screen.blit(bg, (x,y))
 ابتدا باید پخش کننده صوتی پیش تنظیم شود: این کار با دستور زیر انجام می‌شود:
 </p>
 
->```python
-pygame.mixer.pre.load(44100, -16, 2, 2048)
-```
+> ```python
+pygame.mixer.pre.load(44100, -16, 2, 2048)```
 
 <p dir='rtl' align='right'>
 سپس پرونده صوتی را بارگزاری می‌کنیم:
 </p>
 
->```python
+> ```python
 m = pygame.music.load("soundfile.wav")
-m.play(-1) # non-stop and repeated
-```
+m.play(-1) # non-stop and repeated```
 
 #### نمایش متن
 
@@ -646,22 +642,21 @@ m.play(-1) # non-stop and repeated
 </p> 
 
 >```python
-pfont = pygame.SysFont("Name", int(size))
-```
+pfont = pygame.SysFont("Name", int(size))```
+
 <p dir='rtl' align='right'>
 * تولید متن:
 </p>
 
 >```python
 text = pfont.render("text", True, tuple(color))
-text = text.convert_alpha() # optional
-```
+text = text.convert_alpha() # optional```  
+
 <p dir='rtl' align='right'>
 * نمایش متن روی صفحه:
 </p>
 
 >```python
-screen.blit(text, (x,y))
-```
+screen.blit(text, (x,y))```
 
 [مرجع](pygame.org/docs/ref/draw.html#pygame.draw.rect)
