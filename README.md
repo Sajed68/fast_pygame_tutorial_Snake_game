@@ -1,13 +1,18 @@
-برای شروع کار: ابتدا ماژول را به برنامه اضافه می‌کنیم:  
- > import pygame
- 
+<p dir='rtl' align='right'>
+برای شروع کار: ابتدا ماژول را به برنامه اضافه می‌کنیم:
+</p>
+
+> import pygame
+ <p dir='rtl' align='right'>
  سپس نیاز است که فراخوانی اولیه ماژول در ابتدای برنامه انجام شود:
+ </p>
  
  > pygame.init()
- 
+ <p dir='rtl' align='right'>
  هدف ما در اینجا نوشتن یک برنامه ساده از شبیه سازی بازی 
  [snake][1] 
  است، با توجه به این که مکان طعمه در هر مرحله تصادفی انتخاب می‌شود، بنابراین به یک مولد اعداد تصادفی هم نیاز خواهیم داشت.
+ </p>
  
 [1]:https://en.wikipedia.org/wiki/Snake_(video_game_genre) 
 
@@ -28,7 +33,7 @@ pygame.init()
     (6, 0)
 
 
-
+<p dir='rtl' align='right'>
 پنجره قابل نمایش در 
 pygame
 ، 
@@ -36,8 +41,11 @@ screen
 یا صفحه نام دارد.این کلاس هر آنچه که قابل دیدن باشد را شرح می‌دهد. بنابراین ابتدا یک صفحه ایجاد می‌کنیم و اجزای دیگر را بر روی آن صفحه رسم می‌کنیم.
 
 * برای این که پنجره برنامه دارای اسم باشد از دستور زیر برای آن نام تعیین می‌کنیم:
+</p>
+
 > pygame.display.set_caption('Snake v 1.0')
 
+<p dir='rtl' align='right'>
 * راه انداز گرافیکی در پنجره مستطیلی Surface نام دارد، در واقع این سطح یک handle برای کارهای گرافیکی ما می‌باشد.
 سپس برای این که روی این صفحه رنگی اختصاص دهیم، یک پیش زمینه با استفاده از کلاس 
 Surface 
@@ -51,15 +59,18 @@ Surface
 اما اگر بخواهیم که این پیش زمینه بی‌رنگ ظاهر شود بجای متد
 fill 
 از دستور زیر استفاده می‌کنیم:
+</p>
+
 > background.set_colorkey((0,0,0))
 
+<p dir='rtl' align='right'>
 در نهایت با استفاده از متد 
 blit 
 در صفحه 
 screen 
 پیش زمینه را در مختصات دلخواه قرار می‌دهیم.
-* توجه شود که مبدا مختصات در بالاترین نقطه سمت چپ صفحه قرار دارد.
-
+ توجه شود که مبدا مختصات در بالاترین نقطه سمت چپ صفحه قرار دارد.
+</p>
 
 ```python
 pygame.display.set_caption('Snake v 1')
@@ -75,47 +86,49 @@ screen.blit(background, (0,0))
 
     <rect(0, 0, 640, 480)>
 
-
-
+<p dir='rtl' align='right'>
 برای ایجاد زمان واقعی از شی
-*pygame.time.clock()* 
+ <i>pygame.time.clock()</i>
 استفاده می‌کنیم. هر 
-*tick()* 
+<i>tick()</i> 
 از آن یک زمان بر حسب میلی‌ثانیه بر می‌گرداند. این زمان از روی نرخ تعداد فریم‌های نمایشی در هر ثانیه محاسبه می‌شود. بنابراین نیاز است که نرخ فریم از پیش تعیین شده باشد. در اینجا مقدار ۱۵ فریم در ثانیه انتخاب شده است.
 مقادیر بزرگ‌تر را خودتان امتحان نمایید.
-
+</p>
 
 ```python
 clock = pygame.time.Clock()  # this is a clock
 FPS = 15  # change frame rate for velocity of Snake 
 ```
-
+<p dir='rtl' align='right'>
 مار قرار است که بر روی یک صفحه رسم شود، و این صفحه بر روی همان 
-*screen* 
+screen
 از پیش تعریف شده مدل می‌شود. نکته مهم این است که صفحه مار باید بی‌رنگ باشد، مگر در جاهایی که خود مار وجود دارد.
-
+</p>
 
 ```python
 SNAKE_PLANE = pygame.Surface(screen.get_size())
 SNAKE_PLANE.set_colorkey((0, 0, 0))
 ```
-
+<p dir='rtl' align='right'>
 تمام برنامه در یک حلقه اصلی قرار دارد و در هر دور حلفه یک فریم از تصویر نمایش داده می‌شود، برای این که این حلقه عمر بی‌نهایت داشته باشد، از حلقه 
-**while** 
+ <b>while</b>
 استفاده می‌شود. اما برای این که بتوانیم حلقه را گاهی متوقف کنیم از یک عبارت منظقی استفاده می‌کنیم و به طور پیش‌فرض مقدار آن را برابر 
-**True** 
+ <b>True</b>
 قرار می‌دهیم.
-
+</p>
 
 ```python
 main_loop = True
 ```
 
 --------------
-تا الان مقدمات را انجام دادیم و حالا آماده هستیم که یک کلاس برای نمایش و کنترل مار تعریف کنیم.
-**مار** 
-دارای ویژگی‌های اولیه ساده‌ای می‌باشد. این ویژگی‌ها نیاز است که در همان ابتدای تعریف کلاس مقدار دهی شوند.:
 
+<p dir='rtl' align='right'>
+تا الان مقدمات را انجام دادیم و حالا آماده هستیم که یک کلاس برای نمایش و کنترل مار تعریف کنیم.
+<b>مار</b> 
+دارای ویژگی‌های اولیه ساده‌ای می‌باشد. این ویژگی‌ها نیاز است که در همان ابتدای تعریف کلاس مقدار دهی شوند.:
+</p>
+ 
 ```python
 self.points = [(x1,y1), (x2,y2), (x3,y3)] # initial position
 self.__score__ = len(self.points) - 3  # score started from 0 and length started from 3
@@ -131,13 +144,16 @@ for i in range(64):
 self.point_coor = None  # initiate location of food is UnKnown!
 self.__create_point__() # A function to set location of food point
 ```
+<p dir='rtl' align='right'>
 بنابراین کلاس تعریف شده نیاز به دو تابع یکی برای نمایش و دیگری برای مشخص کردن مکان طعمه خواهیم داشت:
 
 در این تابع هر نقطه موجود در ویژگی 
 self.points 
 به صورت یک مربع ۱۰ در ۱۰ سفید رنگ بر روی صفحه ظاهر می‌شود.
-* تابع grow_up(): این تابع نقاط را برای یک حرکت تغییر می‌دهد.
 
+ تابع grow_up(): این تابع نقاط را برای یک حرکت تغییر می‌دهد.
+</p>
+ 
 ```python
 def __draw__(self):
         global SNAKE_PLANE
@@ -174,9 +190,10 @@ def __grow_up__(self):
             self.points.append((x, y))
                         
 ```
-
+<p dir='rtl' align='right'>
 برای تعیین مکان و نمایش طعمه از متد زیر استفاده می‌شود:
 مشخص است که مکان نقطه نباید توسط مار پر شده باشد:
+</p>
 
 ```python
 def __create_point__(self):
@@ -191,12 +208,13 @@ def __create_point__(self):
         self.point_coor = (x * 10, y * 10, 10, 10)
         pygame.draw.rect(SNAKE_PLANE, (0, 0, 0), self.point_coor)
 ```
-
+<p dir='rtl' align='right'>
 همچنین در صورت برخورد سر مار با حاشیه‌های 
 screen 
 و یا بدن خودش، بازی متوقف می‌شود. بررسی این قضیه توسط متد 
 crash 
 انجام می‌شود.
+</p>
 
 ```python
 def __crash_check__(self):
@@ -209,10 +227,11 @@ def __crash_check__(self):
             self.crash = True
             # print ('Crash')
 ```
-
+<p dir='rtl' align='right'>
 توابع برای حرکت در جهات مختلف، که به صورت 
 move_left, up, right, down
 نوشته می‌شوند. فرم یکی از آن‌ها به صورت زیر است:
+</p>
 
 ```python
 def __move_up__(self):
@@ -234,8 +253,9 @@ def __move_up__(self):
        
         self.__draw__()
 ```
-
+<p dir='rtl' align='right'>
 در صورت برخورد سر مار با محل طعمه باید امتیاز یکی اضافه شود:
+</p>
 
 ```python
 def __get_bounce_check__(self):
@@ -246,8 +266,10 @@ def __get_bounce_check__(self):
             snake.__grow_num__ = snake.__grow_num__ + 1
 ```
 
-
+<p dir='rtl' align='right'>
 در هر دور از اجرای حلفه اصلی نیاز است که شی **مار** بروز رسانی شود. در این بروز رسانی جهت حرکت دریافت می‌شود، حرکت انجام شده و بررسی می‌شود که آیا امتیاز دریافت شده است یا بازی شکست خورده است.
+</p>
+
 
 ```python
 def update(self, direction):
@@ -271,9 +293,10 @@ def update(self, direction):
             self.__crash_check__()
 ```
 
-----
+------
+<p dir='rtl' align='right'>
 در نهایت کلاس مار به صورت زیر نوشته می‌شود:
-
+</p>
 
 ```python
 class snake(object):
@@ -461,12 +484,12 @@ class snake(object):
             self.__get_bounce_check__()
             self.__crash_check__()
 ```
-
+<p dir='rtl' align='right'>
 تابع حلقه اصلی برنامه، تابعی است که در هر دور حلقه اصلی خود منتظر دریافت کلیدی از کاربر می‌شود که مشخص کننده جهت حرکت مار می‌باشد.
 برای دریافت کلید نیاز به فعال سازی 
-__Event Handler__ 
+Event Handler
 داریم.برای فعال سازی این مورد از توابع 
-*pygame.event.get()* 
+ <b>pygame.event.get()</b>
 استفاده می‌کنیم.
   
 در نهایت برای نمایش همه تغییرات و صفحه‌ها نیاز است که بر روی  
@@ -474,7 +497,7 @@ screen
 تغییرات با استفاده از متد 
 blit 
 بروز رسانی شود.
-
+</p>
 
 ```python
 def main_game():
@@ -508,11 +531,11 @@ def main_game():
         if Snake.crash:
             return 0
 ```
-
+<p dir='rtl' align='right'>
 همچنین برای برنامه نیاز داریم که یک منوی اولیه طراحی کنیم. در این قسمت پیش از شروع بازی و اجرای تابع 
 main_game 
 یک پنجره نمایش داده می‌شود که حاوی کمی توضیحات است.
-
+</p>
 
 ```python
 if __name__ == '__main__':
@@ -547,6 +570,8 @@ if __name__ == '__main__':
 ![snake](./img/animated.gif)
 
 ----------
+
+<p dir='rtl' align='right'>
 سایر نکات:
 #### رسم شکل هندسی روی Surface:
 در این برنامه دو 
@@ -561,6 +586,7 @@ x
 * ایجاد یا انتخاب یک Surface
 * استفاده از یک تابع رسم با ورودی Surface
 * نمایش Surface بر روی screen با استفاده از متد screen.blit(Surface, (x,y))
+</p>
 
 #### توابع رسم در pygame
 
@@ -576,7 +602,9 @@ python.draw.aaline(Surface, tuple(color), start, stop, end, blend=1)
 python.draw.aalines(Surface, tuple(color), bool(closed), list(points), blend=1)
 ```
 
+<p dir='rtl' align='right'>
 که اگر پهنا صفر باشد شکل‌ها به صورت توپر رسم می‌شوند.
+</p>
 
 #### رسم شکل در پیش‌زمینه:
 
@@ -587,13 +615,18 @@ screen.blit(bg, (x,y))
 ```
 
 #### پخش صدا
+
+<p dir='rtl' align='right'>
 ابتدا باید پخش کننده صوتی پیش تنظیم شود: این کار با دستور زیر انجام می‌شود:
+</p>
 
 >```python
 pygame.mixer.pre.load(44100, -16, 2, 2048)
 ```
 
+<p dir='rtl' align='right'>
 سپس پرونده صوتی را بارگزاری می‌کنیم:
+</p>
 
 >```python
 m = pygame.music.load("soundfile.wav")
@@ -601,22 +634,27 @@ m.play(-1) # non-stop and repeated
 ```
 
 #### نمایش متن
+
+<p dir='rtl' align='right'>
 برای نمایش متن مراحل زیر طی می‌شود:
 
 * تعیین قلم:
+</p> 
 
 >```python
 pfont = pygame.SysFont("Name", int(size))
 ```
-
+<p dir='rtl' align='right'>
 * تولید متن:
+</p>
 
 >```python
 text = pfont.render("text", True, tuple(color))
 text = text.convert_alpha() # optional
 ```
-
+<p dir='rtl' align='right'>
 * نمایش متن روی صفحه:
+</p>
 
 >```python
 screen.blit(text, (x,y))
